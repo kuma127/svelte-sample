@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  svelte:
+    build:
+      context: ./Docker-svelte
+    container_name: svelte
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/code
+    stdin_open: true
+    tty: true
+    command: --port 5000
+    privileged: true
