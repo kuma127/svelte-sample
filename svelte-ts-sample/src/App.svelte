@@ -11,6 +11,17 @@
 </script>
 
 <main>
+    <div id="plot"></div>
+    <py-script>
+import matplotlib.pyplot as plt
+from data import make_x_and_y
+
+x, y = make_x_and_y(n=1000)
+
+fig, ax = plt.subplots()
+ax.scatter(x, y)
+pyscript.write('plot', fig)
+    </py-script>
 	<Card>
 		{text[current]}
 		<button on:click={toggle}>Toggle Message</button>
